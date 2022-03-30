@@ -9,8 +9,8 @@ payments as (
 order_payments as (
     select
         order_id,
-        amount
-    from orders
+        sum(amount) as amount
+    from payments
     group by 1
 ),
 
