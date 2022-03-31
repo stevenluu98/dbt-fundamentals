@@ -21,7 +21,7 @@ final as (
         orders.order_date,
         coalesce(order_payments.amount, 0) as amount
     from orders
-    left join order_payments using (order_id)
+    left join order_payments on order_payments.order_id = orders.order_id
 )
 
 select * from final
