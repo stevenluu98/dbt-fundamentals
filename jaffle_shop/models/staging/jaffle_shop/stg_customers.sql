@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from `steven-testing-345615.jaffle_shop.jaffle_shop_customers`
+    from {{ source('jaffle_shop', 'jaffle_shop_customers') }}
 
 )
 

@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: steven-testing-345615
+    schema: jaffle_shop
+    tables:
+      - name: jaffle_shop_customers
+      - name: jaffle_shop_orders
+      - name: strife_payment
+
+# This code checks for how fresh the data from the source is
+# (e.g. give a warning if data is more than 12 hours old, error if more than 24 hours)
+# You can run `dbt source freshness` to check the freshness of the source data
+# BigQuery uses _batched_at, whereas Snowflake uses _etl_loaded_at
+        #loaded_at_field: _batched_at
+        #freshness:
+          #warn_after: {count: 12, period: hour}
+          #error_after: {count: 24, period: hour}
+
+

@@ -5,7 +5,7 @@ with payments as (
         order_id,
         payment_method,
         amount / 100 as amount
-    from `steven-testing-345615.jaffle_shop.strife_payment`
+    from {{ source('jaffle_shop', 'strife_payment') }}
 
 )
 
