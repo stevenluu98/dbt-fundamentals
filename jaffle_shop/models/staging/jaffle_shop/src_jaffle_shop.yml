@@ -6,7 +6,23 @@ sources:
     schema: jaffle_shop
     tables:
       - name: jaffle_shop_customers
+        description: Raw customers data
+        columns:
+          - name: id
+            description: Primary key for customers
+            tests:
+              - unique
+              - not_null
+
       - name: jaffle_shop_orders
+        description: Raw orders data
+        columns:
+          - name: id
+            description: Primary key for orders
+            tests:
+              - unique
+              - not_null
+
       - name: strife_payment
 
 # This code checks for how fresh the data from the source is
